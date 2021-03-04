@@ -13,6 +13,8 @@ require("dotenv").config();
 
 module.exports = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres",
-  host: "localhost",
-  port: 5432,
+  protocol: "postgres",
+  dialectOptions: {
+    ssl: true,
+  },
 });
